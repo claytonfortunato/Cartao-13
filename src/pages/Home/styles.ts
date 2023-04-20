@@ -9,13 +9,15 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  padding: 1rem;
+  width: 806px;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 
   background-color: ${(props) => props.theme.gray800};
 `;
 
-export const WrapperInput = styled.div``;
+export const WrapperInput = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

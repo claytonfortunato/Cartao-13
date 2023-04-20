@@ -37,11 +37,16 @@ export const NumberBox = styled.div`
   padding: 0;
   gap: 16px;
 
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  margin-top: 4rem;
+  letter-spacing: 0.3rem;
 `;
 
 export const MidInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
   font-size: 1.6rem;
   text-transform: uppercase;
+  margin-top: 1rem;
 `;

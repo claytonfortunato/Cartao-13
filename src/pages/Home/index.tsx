@@ -3,6 +3,7 @@ import { Card } from "../../components/Card";
 import { CardProps } from "../../@types/type";
 
 import * as C from "./styles";
+import { Field } from "../../components/Field";
 
 export const Home = () => {
   const [cardInfo, setCardInfo] = useState<CardProps>({
@@ -10,6 +11,10 @@ export const Home = () => {
     cvv: "123",
     number: "0000 0000 0000 0000",
   });
+
+  const handleCardNumber = (number: string) => {
+    setCardInfo((prev) => ({ ...prev, number: number }));
+  };
 
   return (
     <C.Container>
@@ -20,7 +25,14 @@ export const Home = () => {
           cvv={cardInfo.cvv}
         />
 
-        <C.WrapperInput></C.WrapperInput>
+        <C.WrapperInput>
+          <Field
+            label="Número do Cartão"
+            type="tel"
+            currentValue={cardInfo.number}
+            onFieldChanged={handleCardNumber}
+          />
+        </C.WrapperInput>
       </C.Wrapper>
     </C.Container>
   );
