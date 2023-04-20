@@ -40,12 +40,11 @@ export const WrapperInput = styled.div`
 
 export const BoxInput = styled.div`
   display: flex;
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  align-self: stretch;
-  gap: 22px;
-  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+
   input {
     width: 100%;
     flex: none;

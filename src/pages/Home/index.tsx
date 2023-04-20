@@ -44,9 +44,9 @@ export const Home = () => {
           />
 
           <C.BoxInput>
-            <Field label="Validade" type="date" />
+            <Field label="Validade" type="tel" placeholder="MM/AA" />
             <Field
-              label="CVV"
+              label="CVV ❔"
               type="password"
               currentValue={cardInfo.cvv}
               onFieldChanged={handleSegurity}

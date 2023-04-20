@@ -15,6 +15,10 @@ export const Container = styled.div`
     outline: none;
     font-size: 16px;
 
+    &::placeholder {
+      color: ${(props) => props.theme.gray400};
+    }
+
     &:hover,
     &:focus-within {
       border-color: ${(props) => props.theme.purple900};
