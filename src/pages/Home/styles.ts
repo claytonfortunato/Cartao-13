@@ -2,18 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
+  background-color: ${(props) => props.theme.gray800};
+  padding: 3.2rem;
+  border-radius: 10px;
 `;
 
 export const Wrapper = styled.div`
-  padding: 3.2rem;
   width: 100%;
   height: 100%;
   display: flex;
-  border-radius: 10px;
 
   background-color: ${(props) => props.theme.gray800};
 `;

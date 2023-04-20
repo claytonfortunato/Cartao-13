@@ -4,6 +4,7 @@ import { CardProps } from "../../@types/type";
 
 import * as C from "./styles";
 import { Field } from "../../components/Field";
+import { Button } from "../../components/Button";
 
 export const Home = () => {
   const [cardInfo, setCardInfo] = useState<CardProps>({
@@ -49,16 +50,17 @@ export const Home = () => {
           />
 
           <C.BoxInput>
-            <Field label="Validade" type="tel" />
+            <Field label="Validade" type="date" />
             <Field
               label="CVV"
-              type="tel"
+              type="password"
               currentValue={cardInfo.cvv}
               onFieldChanged={handleSegurity}
             />
           </C.BoxInput>
         </C.WrapperInput>
       </C.Wrapper>
+      <Button />
     </C.Container>
   );
 };
