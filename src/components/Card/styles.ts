@@ -6,6 +6,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 3.6rem;
 `;
 
 export const Wrapper = styled.div`
@@ -20,6 +21,7 @@ export const Wrapper = styled.div`
   border-radius: 16px;
   padding: 1.6rem;
   color: #fff;
+  margin-bottom: 3.2rem;
 `;
 
 export const TopInfo = styled.div`
@@ -37,10 +39,9 @@ export const NumberBox = styled.div`
   padding: 0;
   gap: 16px;
 
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
   margin-top: 4rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.1rem;
 `;
 
 export const MidInfo = styled.div`
@@ -49,4 +50,15 @@ export const MidInfo = styled.div`
   font-size: 1.6rem;
   text-transform: uppercase;
   margin-top: 1rem;
+`;
+
+export const SafeInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  span {
+    font-size: 16px;
+    color: ${(props) => props.theme.gray200};
+  }
 `;

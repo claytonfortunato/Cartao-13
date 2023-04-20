@@ -9,15 +9,38 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  padding: 1rem;
-  width: 806px;
+  padding: 3.2rem;
+  width: 100%;
   height: 100%;
   display: flex;
+  border-radius: 10px;
 
   background-color: ${(props) => props.theme.gray800};
 `;
 
 export const WrapperInput = styled.div`
+  width: 398px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0;
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+`;
+
+export const BoxInput = styled.div`
+  display: flex;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  align-self: stretch;
+  gap: 16px;
+
+  input {
+    width: 100%;
+    flex: none;
+  }
 `;

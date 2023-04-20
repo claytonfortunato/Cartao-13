@@ -16,6 +16,14 @@ export const Home = () => {
     setCardInfo((prev) => ({ ...prev, number: number }));
   };
 
+  const handleName = (name: string) => {
+    setCardInfo((prev) => ({ ...prev, name: name }));
+  };
+
+  const handleSegurity = (cvv: string) => {
+    setCardInfo((prev) => ({ ...prev, cvv: cvv }));
+  };
+
   return (
     <C.Container>
       <C.Wrapper>
@@ -32,6 +40,23 @@ export const Home = () => {
             currentValue={cardInfo.number}
             onFieldChanged={handleCardNumber}
           />
+
+          <Field
+            label="Nome do titular"
+            type="text"
+            currentValue={cardInfo.name}
+            onFieldChanged={handleName}
+          />
+
+          <C.BoxInput>
+            <Field label="Validade" type="tel" />
+            <Field
+              label="CVV"
+              type="tel"
+              currentValue={cardInfo.cvv}
+              onFieldChanged={handleSegurity}
+            />
+          </C.BoxInput>
         </C.WrapperInput>
       </C.Wrapper>
     </C.Container>

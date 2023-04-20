@@ -1,5 +1,6 @@
 import Visa from "../../assets/visa.svg";
 import Payment from "../../assets/ContactlessPayment.svg";
+import Security from "../../assets/ShieldCheck.svg";
 
 import { CardProps } from "../../@types/type";
 
@@ -20,6 +21,11 @@ export const Card = ({ number, name, cvv }: CardProps) => {
           <span>00/00</span>
         </C.MidInfo>
       </C.Wrapper>
+      <C.SafeInfo>
+        <img src={Security} alt="" />
+
+        <span>Seus dados estão seguros</span>
+      </C.SafeInfo>
     </C.CardContainer>
   );
 };
