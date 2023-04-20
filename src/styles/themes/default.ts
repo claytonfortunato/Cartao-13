@@ -7,8 +7,9 @@ export const defaultTheme = {
   gray700: "#374151",
   gray800: "#1F2937",
   gray900: "#111827",
-  purple600: "#8E24AA",
   purple400: "#A855F7",
+  purple600: "#8E24AA",
+  purple900: "#9333EA",
   sucess: "#6EE7B7",
   error: "#FB7185",
 };

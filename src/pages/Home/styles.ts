@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
   background-color: ${(props) => props.theme.gray800};
-  padding: 3.2rem;
+  padding: 2.4rem;
   border-radius: 10px;
 `;
 
@@ -14,8 +14,14 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
 
   background-color: ${(props) => props.theme.gray800};
+
+  @media (max-width: 782px) {
+    flex-direction: column;
+  }
 `;
 
 export const WrapperInput = styled.div`
@@ -25,6 +31,7 @@ export const WrapperInput = styled.div`
   align-items: flex-start;
   gap: 24px;
   padding: 0;
+  margin-right: 5.2rem;
 
   flex: none;
   order: 0;
@@ -37,8 +44,8 @@ export const BoxInput = styled.div`
   order: 2;
   flex-grow: 0;
   align-self: stretch;
-  gap: 16px;
-
+  gap: 22px;
+  width: 100%;
   input {
     width: 100%;
     flex: none;

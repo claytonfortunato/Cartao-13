@@ -28,12 +28,6 @@ export const Home = () => {
   return (
     <C.Container>
       <C.Wrapper>
-        <Card
-          number={cardInfo.number}
-          name={cardInfo.name}
-          cvv={cardInfo.cvv}
-        />
-
         <C.WrapperInput>
           <Field
             label="Número do Cartão"
@@ -59,6 +53,12 @@ export const Home = () => {
             />
           </C.BoxInput>
         </C.WrapperInput>
+
+        <Card
+          number={cardInfo.number}
+          name={cardInfo.name}
+          cvv={cardInfo.cvv}
+        />
       </C.Wrapper>
       <Button />
     </C.Container>

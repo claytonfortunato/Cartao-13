@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   input {
     width: 398px;
@@ -13,6 +14,11 @@ export const Container = styled.div`
     color: ${(props) => props.theme.gray400};
     outline: none;
     font-size: 16px;
+
+    &:hover,
+    &:focus-within {
+      border-color: ${(props) => props.theme.purple900};
+    }
   }
 `;
 

@@ -5,8 +5,6 @@ import Card from "../../assets/credit_card_bg.svg";
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-right: 3.6rem;
 `;
 
 export const Wrapper = styled.div`
@@ -56,6 +54,7 @@ export const SafeInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 2rem;
   gap: 8px;
   span {
     font-size: 16px;

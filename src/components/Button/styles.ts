@@ -11,7 +11,7 @@ export const Button = styled.button`
   outline: none;
   border: none;
   border-radius: 4px;
-  margin-top: 2.4rem;
+  margin-top: 4rem;
   color: ${(props) => props.theme.gray200};
 
   transition: all ease-in 0.2s;
