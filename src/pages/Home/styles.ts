@@ -17,11 +17,11 @@ export const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
 
-  background-color: ${(props) => props.theme.gray800};
-
   @media (max-width: 782px) {
     flex-direction: column;
   }
+
+  background-color: ${(props) => props.theme.gray800};
 `;
 
 export const WrapperInput = styled.div`
@@ -36,6 +36,10 @@ export const WrapperInput = styled.div`
   flex: none;
   order: 0;
   flex-grow: 1;
+
+  @media (max-width: 782px) {
+    order: 1;
+  }
 `;
 
 export const BoxInput = styled.div`

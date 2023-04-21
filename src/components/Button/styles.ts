@@ -13,6 +13,7 @@ export const Button = styled.button`
   border-radius: 4px;
   margin-top: 4rem;
   color: ${(props) => props.theme.gray200};
+  font-size: 16px;
 
   transition: all ease-in 0.2s;
 
