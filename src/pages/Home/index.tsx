@@ -25,6 +25,10 @@ export const Home = () => {
     setCardInfo((prev) => ({ ...prev, cvv: cvv }));
   };
 
+  const handleFocus = (e) => {
+    setCardInfo({});
+  };
+
   return (
     <C.Container>
       <C.Wrapper>
@@ -41,6 +45,7 @@ export const Home = () => {
             type="text"
             currentValue={cardInfo.name}
             onFieldChanged={handleName}
+            placeholder="Digite seu nome"
           />
 
           <C.BoxInput>
