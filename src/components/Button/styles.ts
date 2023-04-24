@@ -15,9 +15,10 @@ export const Button = styled.button`
   color: ${(props) => props.theme.gray200};
   font-size: 16px;
 
-  transition: all ease-in 0.2s;
+  transition: all ease-in 0.3s;
 
   &:hover {
     background: ${(props) => props.theme.purple400};
+    color: ${(props) => props.theme.black};
   }
 `;

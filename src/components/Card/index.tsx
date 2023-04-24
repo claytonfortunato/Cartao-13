@@ -1,15 +1,16 @@
 import Visa from "../../assets/visa.svg";
 import Payment from "../../assets/ContactlessPayment.svg";
 import Security from "../../assets/ShieldCheck.svg";
+import backImg from "../../assets/back.png";
 
 import { CardProps } from "../../@types/type";
 
 import * as C from "./styles";
 
-export const Card = ({ number, name, cvv }: CardProps) => {
+export const Card = ({ number, name, cvv, flipped }: CardProps) => {
   return (
     <C.CardContainer>
-      <C.Wrapper>
+      <C.Wrapper flipped={flipped}>
         <C.TopInfo>
           <img src={Visa} alt="" />
 
@@ -20,6 +21,7 @@ export const Card = ({ number, name, cvv }: CardProps) => {
           <span>{name}</span>
           <span>00/00</span>
         </C.MidInfo>
+        <img src={backImg} alt="" />
       </C.Wrapper>
       <C.SafeInfo>
         <img src={Security} alt="" />

@@ -13,7 +13,6 @@ export const Field = ({
   type,
   currentValue,
   onFieldChanged,
-  ...inputProps
 }: FieldProps) => {
   return (
     <C.Container>
@@ -22,7 +21,6 @@ export const Field = ({
         type={type}
         value={currentValue}
         onChange={(e) => onFieldChanged!(e.target.value)}
-        {...inputProps}
       />
     </C.Container>
   );

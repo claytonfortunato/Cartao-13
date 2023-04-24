@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { Card } from "../../components/Card";
-import { CardProps } from "../../@types/type";
+import { CardProps, CardType } from "../../@types/type";
 
 import * as C from "./styles";
 import { Field } from "../../components/Field";
 import { Button } from "../../components/Button";
 
-export const Home = () => {
+interface Props {
+  card: CardType;
+  callback: (card: CardType) => void;
+}
+
+export const Home = ({ card, callback }: Props) => {
   const [cardInfo, setCardInfo] = useState<CardProps>({
     name: "Seu nome",
     cvv: "123",
@@ -25,8 +30,8 @@ export const Home = () => {
     setCardInfo((prev) => ({ ...prev, cvv: cvv }));
   };
 
-  const handleFocus = (e) => {
-    setCardInfo({});
+  const handleClick = () => {
+    if (card.clickable) callback(card);
   };
 
   return (

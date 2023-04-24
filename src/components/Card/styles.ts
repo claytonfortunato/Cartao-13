@@ -1,13 +1,30 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Card from "../../assets/credit_card_bg.svg";
+
+type Props = {
+  flipped: boolean;
+};
+
+const sharedStyles = css`
+  width: 100%;
+  max-width: 150px;
+  height: 100%;
+  max-height: 150px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+  background-color: #333;
+  transform-style: preserve-3d;
+`;
 
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<Props>`
   width: 280px;
   height: 168px;
   background: url(${Card}) no-repeat center/cover;
@@ -20,6 +37,9 @@ export const Wrapper = styled.div`
   padding: 1.6rem;
   color: #fff;
   margin-bottom: 3.2rem;
+
+  position: relative;
+  perspective: 1000px;
 `;
 
 export const TopInfo = styled.div`
