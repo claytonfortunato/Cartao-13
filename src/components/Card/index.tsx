@@ -15,7 +15,7 @@ type PropsCard = {
 export const Card = ({ number, name, cvv }: CardProps) => {
   return (
     <C.CardContainer>
-      <C.Wrapper>
+      <C.FrontCard>
         <C.TopInfo>
           <img src={Visa} alt="" />
 
@@ -27,7 +27,7 @@ export const Card = ({ number, name, cvv }: CardProps) => {
           <span>00/00</span>
         </C.MidInfo>
         <img src={backImg} alt="" />
-      </C.Wrapper>
+      </C.FrontCard>
 
       <C.BackCard>
         <C.TopBar></C.TopBar>

@@ -4,10 +4,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
+
+  width: 800px;
   background-color: ${(props) => props.theme.gray800};
   padding: 2.4rem;
   border-radius: 10px;
+
+  @media (max-width: 782px) {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+  }
 `;
 
 export const Content = styled.div`
@@ -33,10 +40,6 @@ export const WrapperInput = styled.div`
   padding: 0;
   margin-right: 5.2rem;
 
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-
   @media (max-width: 782px) {
     order: 1;
   }
@@ -52,5 +55,16 @@ export const BoxInput = styled.div`
   input {
     width: 100%;
     flex: none;
+  }
+`;
+
+export const ContentCard = styled.div`
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 782px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;

@@ -63,13 +63,15 @@ export const Home = ({ card, callback }: Props) => {
           </C.BoxInput>
         </C.WrapperInput>
 
-        <Card
-          number={cardInfo.number}
-          name={cardInfo.name}
-          cvv={cardInfo.cvv}
-        />
+        <C.ContentCard>
+          <Card
+            number={cardInfo.number}
+            name={cardInfo.name}
+            cvv={cardInfo.cvv}
+          />
 
-        <SafetyInfo />
+          <SafetyInfo />
+        </C.ContentCard>
       </C.Content>
       <Button />
     </C.Container>

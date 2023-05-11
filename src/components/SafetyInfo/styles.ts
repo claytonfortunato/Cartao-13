@@ -9,6 +9,11 @@ export const Container = styled.div`
   span {
     margin-left: 12px;
   }
+
+  @media (max-width: 782px) {
+    margin-bottom: 40px;
+    order: 1;
+  }
 `;
 
 export const Image = styled.img``;

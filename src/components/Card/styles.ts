@@ -26,13 +26,19 @@ const sharedCard = css`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 400px;
+  justify-content: center;
+  height: 260px;
+  margin-top: -24px;
 
   position: relative;
   perspective: 1000px;
+
+  @media (max-width: 782px) {
+    align-items: center;
+  }
 `;
 
-export const Wrapper = styled.div<Props>`
+export const FrontCard = styled.div<Props>`
   ${sharedCard}
 
   padding: 1.6rem;
@@ -107,6 +113,7 @@ export const NumberBack = styled.div`
     border: none;
     outline: none;
     text-align: right;
+    width: 70%;
   }
 
   span {
