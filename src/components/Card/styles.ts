@@ -18,7 +18,7 @@ const sharedCard = css`
   transform-style: preserve-3d;
   color: #fff;
   border-radius: 16px;
-  padding: 1.6rem;
+
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
   position: absolute;
 `;
@@ -26,6 +26,7 @@ const sharedCard = css`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: 400px;
 
   position: relative;
   perspective: 1000px;
@@ -34,6 +35,7 @@ export const CardContainer = styled.div`
 export const Wrapper = styled.div<Props>`
   ${sharedCard}
 
+  padding: 1.6rem;
   z-index: ${(props) => (props.flipped ? 2 : 1)};
   transform: ${(props) => (props.flipped ? "rotate(0deg)" : "rotateY(180deg)")};
 
@@ -92,4 +94,31 @@ export const BackCard = styled.div<Props>`
   position: absolute;
 `;
 
-export const NumberBack = styled.div``;
+export const NumberBack = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+
+  input {
+    background: ${(props) => props.theme.gray300};
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    text-align: right;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 100;
+    margin-left: 8px;
+  }
+`;
+
+export const TopBar = styled.div`
+  background-color: ${(props) => props.theme.gray900};
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+`;

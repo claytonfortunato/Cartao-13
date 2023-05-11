@@ -6,6 +6,7 @@ import * as C from "./styles";
 import { Field } from "../../components/Field";
 import { Button } from "../../components/Button";
 import help from "../../assets/help.svg";
+import { SafetyInfo } from "../../components/SafetyInfo";
 
 interface Props {
   card: CardType;
@@ -67,6 +68,8 @@ export const Home = ({ card, callback }: Props) => {
           name={cardInfo.name}
           cvv={cardInfo.cvv}
         />
+
+        <SafetyInfo />
       </C.Content>
       <Button />
     </C.Container>

@@ -28,14 +28,12 @@ export const Card = ({ number, name, cvv }: CardProps) => {
         </C.MidInfo>
         <img src={backImg} alt="" />
       </C.Wrapper>
-      <C.SafeInfo>
-        <img src={Security} alt="" />
 
-        <span>Seus dados estão seguros</span>
-      </C.SafeInfo>
       <C.BackCard>
+        <C.TopBar></C.TopBar>
         <C.NumberBack>
-          <span>{cvv}</span>
+          <input type="text" value={cvv} />
+          <span>CVV</span>
         </C.NumberBack>
       </C.BackCard>
     </C.CardContainer>
