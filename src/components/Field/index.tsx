@@ -6,17 +6,23 @@ interface FieldProps {
   currentValue?: string;
   onFieldChanged?: (text: string) => void;
   placeholder?: string;
+  help?: string;
 }
 
 export const Field = ({
   label,
   type,
   currentValue,
+  help,
   onFieldChanged,
 }: FieldProps) => {
   return (
     <C.Container>
-      <C.Label>{label}</C.Label>
+      <C.Label>
+        {label}
+
+        <img src={help} alt="" />
+      </C.Label>
       <input
         type={type}
         value={currentValue}

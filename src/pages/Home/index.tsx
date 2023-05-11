@@ -5,6 +5,7 @@ import { CardProps, CardType } from "../../@types/type";
 import * as C from "./styles";
 import { Field } from "../../components/Field";
 import { Button } from "../../components/Button";
+import help from "../../assets/help.svg";
 
 interface Props {
   card: CardType;
@@ -30,10 +31,6 @@ export const Home = ({ card, callback }: Props) => {
     setCardInfo((prev) => ({ ...prev, cvv: cvv }));
   };
 
-  const handleClick = () => {
-    if (card.clickable) callback(card);
-  };
-
   return (
     <C.Container>
       <C.Content>
@@ -56,7 +53,8 @@ export const Home = ({ card, callback }: Props) => {
           <C.BoxInput>
             <Field label="Validade" type="tel" placeholder="MM/AA" />
             <Field
-              label="CVV ❔"
+              help={help}
+              label="CVV"
               type="tel"
               currentValue={cardInfo.cvv}
               onFieldChanged={handleSegurity}

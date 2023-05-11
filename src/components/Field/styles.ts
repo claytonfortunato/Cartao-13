@@ -29,4 +29,9 @@ export const Container = styled.div`
 export const Label = styled.label`
   font-size: 16px;
   color: ${(props) => props.theme.gray200};
+  padding-right: 10px;
+
+  img {
+    padding-left: 6px;
+  }
 `;
