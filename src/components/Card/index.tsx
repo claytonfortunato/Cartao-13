@@ -7,10 +7,15 @@ import { CardProps } from "../../@types/type";
 
 import * as C from "./styles";
 
-export const Card = ({ number, name, cvv, flipped }: CardProps) => {
+type PropsCard = {
+  card: CardProps;
+  callback: (card: CardProps) => void;
+};
+
+export const Card = ({ number, name, cvv }: CardProps) => {
   return (
     <C.CardContainer>
-      <C.Wrapper flipped={flipped}>
+      <C.Wrapper>
         <C.TopInfo>
           <img src={Visa} alt="" />
 
@@ -28,6 +33,11 @@ export const Card = ({ number, name, cvv, flipped }: CardProps) => {
 
         <span>Seus dados estão seguros</span>
       </C.SafeInfo>
+      <C.BackCard>
+        <C.NumberBack>
+          <span>{cvv}</span>
+        </C.NumberBack>
+      </C.BackCard>
     </C.CardContainer>
   );
 };

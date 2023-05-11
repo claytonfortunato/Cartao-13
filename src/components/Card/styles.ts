@@ -6,40 +6,41 @@ type Props = {
   flipped: boolean;
 };
 
-const sharedStyles = css`
-  width: 100%;
-  max-width: 150px;
-  height: 100%;
-  max-height: 150px;
+const sharedCard = css`
+  background: url(${Card}) no-repeat center/cover;
+  width: 280px;
+  height: 168px;
   border-radius: 20px;
   border: 1px solid #333;
   transition: all 0.5s;
   backface-visibility: hidden;
   background-color: #333;
   transform-style: preserve-3d;
+  color: #fff;
+  border-radius: 16px;
+  padding: 1.6rem;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+  position: absolute;
 `;
 
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const Wrapper = styled.div<Props>`
-  width: 280px;
-  height: 168px;
-  background: url(${Card}) no-repeat center/cover;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-
-  border-radius: 16px;
-  padding: 1.6rem;
-  color: #fff;
-  margin-bottom: 3.2rem;
 
   position: relative;
   perspective: 1000px;
+`;
+
+export const Wrapper = styled.div<Props>`
+  ${sharedCard}
+
+  z-index: ${(props) => (props.flipped ? 2 : 1)};
+  transform: ${(props) => (props.flipped ? "rotate(0deg)" : "rotateY(180deg)")};
+
+  .front.flipped {
+    z-index: 1;
+    transform: rotateY(180deg);
+  }
 `;
 
 export const TopInfo = styled.div`
@@ -81,3 +82,14 @@ export const SafeInfo = styled.div`
     color: ${(props) => props.theme.gray200};
   }
 `;
+
+export const BackCard = styled.div<Props>`
+  ${sharedCard}
+
+  z-index: ${(props) => (props.flipped ? 1 : 2)};
+  transform: ${(props) =>
+    props.flipped ? "rotateY(180deg)" : "rotate(360deg)"};
+  position: absolute;
+`;
+
+export const NumberBack = styled.div``;

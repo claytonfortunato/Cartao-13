@@ -36,7 +36,7 @@ export const Home = ({ card, callback }: Props) => {
 
   return (
     <C.Container>
-      <C.Wrapper>
+      <C.Content>
         <C.WrapperInput>
           <Field
             label="Número do Cartão"
@@ -57,7 +57,7 @@ export const Home = ({ card, callback }: Props) => {
             <Field label="Validade" type="tel" placeholder="MM/AA" />
             <Field
               label="CVV ❔"
-              type="password"
+              type="tel"
               currentValue={cardInfo.cvv}
               onFieldChanged={handleSegurity}
             />
@@ -69,7 +69,7 @@ export const Home = ({ card, callback }: Props) => {
           name={cardInfo.name}
           cvv={cardInfo.cvv}
         />
-      </C.Wrapper>
+      </C.Content>
       <Button />
     </C.Container>
   );
