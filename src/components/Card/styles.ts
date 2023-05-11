@@ -2,53 +2,56 @@ import styled, { css } from "styled-components";
 
 import Card from "../../assets/credit_card_bg.svg";
 
-type Props = {
-  flipped: boolean;
-};
-
 const sharedCard = css`
   background: url(${Card}) no-repeat center/cover;
+  position: absolute;
   width: 280px;
   height: 168px;
   border-radius: 20px;
   border: 1px solid #333;
   transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #333;
-  transform-style: preserve-3d;
+
   color: #fff;
   border-radius: 16px;
 
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
-  position: absolute;
+`;
+
+export const FlipCard = styled.div`
+  background-color: transparent;
+  height: 200px;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
 `;
 
 export const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 260px;
-  margin-top: -24px;
-
-  position: relative;
   perspective: 1000px;
+  cursor: pointer;
+
+  ${FlipCard}:hover {
+    transform: rotateY(180deg);
+  }
 
   @media (max-width: 782px) {
     align-items: center;
   }
 `;
 
-export const FrontCard = styled.div<Props>`
+export const FrontCard = styled.div`
   ${sharedCard}
 
   padding: 1.6rem;
-  z-index: ${(props) => (props.flipped ? 2 : 1)};
-  transform: ${(props) => (props.flipped ? "rotate(0deg)" : "rotateY(180deg)")};
+`;
 
-  .front.flipped {
-    z-index: 1;
-    transform: rotateY(180deg);
-  }
+export const BackCard = styled.div`
+  ${sharedCard}
+
+  transform: rotateY(180deg);
 `;
 
 export const TopInfo = styled.div`
@@ -66,17 +69,19 @@ export const NumberBox = styled.div`
   padding: 0;
   gap: 16px;
 
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 4rem;
   letter-spacing: 0.1rem;
+  font-weight: 100;
 `;
 
 export const MidInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   margin-top: 1rem;
+  font-weight: 100;
 `;
 
 export const SafeInfo = styled.div`
@@ -89,15 +94,6 @@ export const SafeInfo = styled.div`
     font-size: 16px;
     color: ${(props) => props.theme.gray200};
   }
-`;
-
-export const BackCard = styled.div<Props>`
-  ${sharedCard}
-
-  z-index: ${(props) => (props.flipped ? 1 : 2)};
-  transform: ${(props) =>
-    props.flipped ? "rotateY(180deg)" : "rotate(360deg)"};
-  position: absolute;
 `;
 
 export const NumberBack = styled.div`

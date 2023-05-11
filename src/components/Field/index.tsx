@@ -15,6 +15,7 @@ export const Field = ({
   currentValue,
   help,
   onFieldChanged,
+  placeholder,
 }: FieldProps) => {
   return (
     <C.Container>
@@ -26,6 +27,7 @@ export const Field = ({
       <input
         type={type}
         value={currentValue}
+        placeholder={placeholder}
         onChange={(e) => onFieldChanged!(e.target.value)}
       />
     </C.Container>

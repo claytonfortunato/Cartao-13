@@ -8,16 +8,13 @@ import { Button } from "../../components/Button";
 import help from "../../assets/help.svg";
 import { SafetyInfo } from "../../components/SafetyInfo";
 
-interface Props {
-  card: CardType;
-  callback: (card: CardType) => void;
-}
+export const Home = () => {
+  const [cards, setCards] = useState<CardType[]>();
 
-export const Home = ({ card, callback }: Props) => {
   const [cardInfo, setCardInfo] = useState<CardProps>({
-    name: "Seu nome",
+    name: "",
     cvv: "123",
-    number: "0000 0000 0000 0000",
+    number: "",
   });
 
   const handleCardNumber = (number: string) => {
@@ -32,6 +29,16 @@ export const Home = ({ card, callback }: Props) => {
     setCardInfo((prev) => ({ ...prev, cvv: cvv }));
   };
 
+  const handleCardClick = (currentClickedCard: CardType) => {
+    setCards((prev) =>
+      prev?.map((card) =>
+        card.id === currentClickedCard.id
+          ? { ...card, flipped: true, clickable: false }
+          : card
+      )
+    );
+  };
+
   return (
     <C.Container>
       <C.Content>
@@ -41,6 +48,7 @@ export const Home = ({ card, callback }: Props) => {
             type="tel"
             currentValue={cardInfo.number}
             onFieldChanged={handleCardNumber}
+            placeholder="Digite o número do cartão"
           />
 
           <Field
@@ -48,7 +56,7 @@ export const Home = ({ card, callback }: Props) => {
             type="text"
             currentValue={cardInfo.name}
             onFieldChanged={handleName}
-            placeholder="Digite seu nome"
+            placeholder="Nome como está no cartão"
           />
 
           <C.BoxInput>
@@ -68,6 +76,7 @@ export const Home = ({ card, callback }: Props) => {
             number={cardInfo.number}
             name={cardInfo.name}
             cvv={cardInfo.cvv}
+            callback={handleCardClick}
           />
 
           <SafetyInfo />
