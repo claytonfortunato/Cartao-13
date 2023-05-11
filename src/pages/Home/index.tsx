@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card } from "../../components/Card";
-import { CardProps, CardType } from "../../@types/type";
+import { CardProps } from "../../@types/type";
 
 import * as C from "./styles";
 import { Field } from "../../components/Field";
@@ -9,12 +9,11 @@ import help from "../../assets/help.svg";
 import { SafetyInfo } from "../../components/SafetyInfo";
 
 export const Home = () => {
-  const [cards, setCards] = useState<CardType[]>();
-
   const [cardInfo, setCardInfo] = useState<CardProps>({
     name: "",
     cvv: "123",
     number: "",
+    validate: "",
   });
 
   const handleCardNumber = (number: string) => {
@@ -29,14 +28,8 @@ export const Home = () => {
     setCardInfo((prev) => ({ ...prev, cvv: cvv }));
   };
 
-  const handleCardClick = (currentClickedCard: CardType) => {
-    setCards((prev) =>
-      prev?.map((card) =>
-        card.id === currentClickedCard.id
-          ? { ...card, flipped: true, clickable: false }
-          : card
-      )
-    );
+  const handleValidate = (validate: string) => {
+    setCardInfo((prev) => ({ ...prev, validate: validate }));
   };
 
   return (
@@ -60,7 +53,13 @@ export const Home = () => {
           />
 
           <C.BoxInput>
-            <Field label="Validade" type="tel" placeholder="MM/AA" />
+            <Field
+              label="Validade"
+              type="tel"
+              placeholder="mm/aa"
+              currentValue={cardInfo.validate}
+              onFieldChanged={handleValidate}
+            />
             <Field
               help={help}
               label="CVV"
@@ -76,7 +75,7 @@ export const Home = () => {
             number={cardInfo.number}
             name={cardInfo.name}
             cvv={cardInfo.cvv}
-            callback={handleCardClick}
+            validate={cardInfo.validate}
           />
 
           <SafetyInfo />

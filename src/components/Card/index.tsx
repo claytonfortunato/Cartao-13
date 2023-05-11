@@ -5,7 +5,7 @@ import { CardProps } from "../../@types/type";
 
 import * as C from "./styles";
 
-export const Card = ({ number, name, cvv }: CardProps) => {
+export const Card = ({ number, name, cvv, validate }: CardProps) => {
   return (
     <C.CardContainer>
       <C.FlipCard>
@@ -19,7 +19,7 @@ export const Card = ({ number, name, cvv }: CardProps) => {
 
           <C.MidInfo>
             <span>{name || "Seu nome aqui"}</span>
-            <span>**/**</span>
+            <span>{validate || "**/**"}</span>
           </C.MidInfo>
         </C.FrontCard>
 

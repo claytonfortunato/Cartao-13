@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { FlipCard } from "../Card/styles";
+import { BackCard } from "../Card/styles";
 
 export const Container = styled.div`
   display: flex;
@@ -22,6 +24,10 @@ export const Container = styled.div`
     &:hover,
     &:focus-within {
       border-color: ${(props) => props.theme.purple900};
+
+      ${FlipCard} {
+        transform: rotateY(180deg);
+      }
     }
   }
 `;
