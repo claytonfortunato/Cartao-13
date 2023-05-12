@@ -11,7 +11,7 @@ import { SafetyInfo } from "../../components/SafetyInfo";
 export const Home = () => {
   const [cardInfo, setCardInfo] = useState<CardProps>({
     name: "",
-    cvv: "123",
+    cvv: "***",
     number: "",
     validate: "",
   });

@@ -23,6 +23,8 @@ const sharedCard = css`
 export const FlipCard = styled.div`
   background-color: transparent;
   height: 200px;
+  display: flex;
+  justify-content: center;
 
   position: relative;
   transform-style: preserve-3d;
