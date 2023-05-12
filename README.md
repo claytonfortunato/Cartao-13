@@ -23,6 +23,7 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologia
 
   
 ## 👾 Deploy
+[Cartão](https://cartao-13.vercel.app/)
 
 
 
